@@ -10,4 +10,15 @@
       </h1>
     </section>
   </aside>
+
+  <div class="span8">
+    <% if @user.newsposts.any? %>
+      <h3>Newsposts (<%= @user.newsposts.count %>)</h3>
+      <ol class="newsposts">
+        <%= render @newsposts %>
+      </ol>
+      <%= will_paginate @newsposts %>
+    <% end %>
+  </div>
+
 </div>

@@ -17,6 +17,8 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
+  it { should respond_to(:newsposts) }
+  it { should respond_to(:feed) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -132,5 +134,26 @@ describe User do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
   end
-   
+  
+  describe "newspost associations" do
+    before { @user.save }
+    
+    let!(:older_newspost) do
+      FactoryGirl.create(:newspost, user: @user, created_at: 1.day.ago)
+    end
+
+    let!(:newer_newspost) do
+      FactoryGirl.create(:newspost, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right newsposts in the right order" do
+      expect(@user.newsposts.to_a).to eq [newer_newspost, older_newspost]
+    end
+
+    describe "status" do
+      its(:feed) { should include(newer_newspost) }
+      its(:feed) { should include(older_newspost) }
+    end
+
+  end   
 end

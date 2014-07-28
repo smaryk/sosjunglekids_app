@@ -68,12 +68,23 @@ describe "User pages" do
   end
 
   describe "profile page" do
+
+    let(:user) { FactoryGirl.create(:user) }
+    let!(:m1) { FactoryGirl.create(:newspost, user: user, content: "Foo") }
+    let!(:m2) { FactoryGirl.create(:newspost, user: user, content: "Bar") }
+
     let(:user) { FactoryGirl.create(:user) }
     before { visit user_path(user) }
     
     it { should have_content(user.first_name) }
     it { should have_content(user.last_name) }
     it { should have_title(user.first_name + " " + user.last_name) }
+
+    describe "newsposts" do
+      it { should have_content(m1.content) }
+      it { should have_content(m2.content) }
+      it { should have_content(user.newsposts.count) }
+    end
   end
 
   describe "signup" do

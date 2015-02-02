@@ -1,24 +1,17 @@
 <% provide(:title, @user.first_name + " " + @user.last_name) %>
+<br><br><br><br>
+
+<h2>User Profile for '<%= @user.first_name %> <%= @user.last_name %>'</h2>
+
+
 
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= #gravatar_for @user 
-        %>
-        <%= @user.first_name %> <%= @user.last_name %>
-      </h1>
-    </section>
-  </aside>
-
-  <div class="span8">
-    <% if @user.newsposts.any? %>
-      <h3>Newsposts (<%= @user.newsposts.count %>)</h3>
-      <ol class="newsposts">
-        <%= render @newsposts %>
-      </ol>
-      <%= will_paginate @newsposts %>
-    <% end %>
-  </div>
+<% if @user.newsposts.any? %>
+  <h3>Newsposts (<%= @user.newsposts.count %>)</h3>
+  <br>
+    <%= render @newsposts %>
+  
+    <%= will_paginate @newsposts %>
+<% end %>
 
 </div>

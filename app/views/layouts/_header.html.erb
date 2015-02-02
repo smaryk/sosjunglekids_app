@@ -1,23 +1,35 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "SOSJungleKids India", '#', id: "logo" %>
+
+    <div class="navbartop-custom">  
+    <br>
+    </div>
+
+
+  <div class="navbar-custom">   
+    <div class="pull-left" >
+       <%=image_tag("sosjunglekids.png",size:"230x200", alt: "SOS Jungle Kids, India")%>
+    </div>  
+    
+    <div class="container-fluid">
+
       <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home",     home_path   %></li>
-          <li><%= link_to "Help",     help_path   %></li>
-          <li><%= link_to "About Us", about_path  %></li>
-          <li><%= link_to "Contact Us", contact_path %></li>
+        <ul class="nav pull-right nav-links">
+          <li><%= link_to "HOME",     home_path   %></li>
+          <li><%= link_to "ABOUT US", about_path  %></li>
+          <li><%= link_to "CONTACT US", contact_path %></li>
+          <li><%= link_to "FAQ",     faq_path   %></li>
+          <!-- <li><%= link_to "Blog",     blog_path   %></li>  -->
 
           <% if signed_in? %>
-            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "USERS", users_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
+                ACCOUNT <b class="caret"></b>
               </a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu nav-links">
                 <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li><%= link_to 'New Post', new_newspost_path %></li>
                 <li class="divider"></li>
                 <li>
                   <%= link_to "Sign out", signout_path, method: "delete" %>
@@ -25,12 +37,19 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to "LOGIN", signin_path %></li>
           <% end %>
 
 
         </ul>
       </nav>
     </div>
+
+    <div class="navbarbottom-custom">  
+    <br>
+    </div>
+
   </div>
+
+
 </header>

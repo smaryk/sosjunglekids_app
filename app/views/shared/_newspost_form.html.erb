@@ -1,7 +1,17 @@
-<%= form_for(@newspost) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new newspost..." %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<%= form_for(@newspost , :html => { :multipart => true }) do |f| %>
+   <div class="field">
+     <%= f.label :content %><br>
+     <%= f.text_area :content, :size => "150x70" %>
+   </div>
+
+   <%= f.fields_for :newspost_attachments do |p| %>
+     <div class="field">
+       <%= p.label :file %><br>
+       <%= p.file_field :file, :multiple => true, name: "newspost_attachments[file][]" %>
+     </div>
+   <% end %>
+
+   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+
 <% end %>
+

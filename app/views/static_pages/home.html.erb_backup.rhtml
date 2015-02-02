@@ -1,0 +1,49 @@
+<% if signed_in? %>
+<br><br><br><br><br><br>
+<div class="container-fluid">
+  <h1>Welcome to SOSJungleKids, India </h1>
+  <div class="row-fluid">
+    <div class="span3">
+      <h3>Newsposts</h3>
+      
+      <%= link_to 'New Post', new_newspost_path %>
+      <%= render 'shared/feed' %>
+    </div>
+    <div class="content span9">
+      <!--Body content-->
+      This is a test article.
+      This is a test article.
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+<% else %>
+<br><br><br><br><br><br>
+<div class="container-fluid">
+       <!-- Intro Content -->
+        <div class="row">
+                <h1>SOS Jungle Kids: About Us</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+            
+        </div>
+
+  <div class="center hero-unit">
+    <h2>You have the power to change a child's life. Foster a child's education today!</h2>
+    
+    <%= link_to "Sign up now!", signup_path,
+                                class: "btn btn-small btn-primary" %>
+  </div>
+
+</div>  
+
+<% end %>

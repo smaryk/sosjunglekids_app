@@ -1,0 +1,29 @@
+<h1>Listing newspost_attachments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Newspost</th>
+      <th>File</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newspost_attachments.each do |newspost_attachment| %>
+      <tr>
+        <td><%= newspost_attachment.newspost_id %></td>
+        <td><%= newspost_attachment.file %></td>
+        <td><%= link_to 'Show', newspost_attachment %></td>
+        <td><%= link_to 'Edit', edit_newspost_attachment_path(newspost_attachment) %></td>
+        <td><%= link_to 'Destroy', newspost_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Newspost attachment', new_newspost_attachment_path %>

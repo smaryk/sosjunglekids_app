@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Newspost:</strong>
+  <%= @newspost_attachment.newspost_id %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @newspost_attachment.file %>
+</p>
+
+<%= link_to 'Edit', edit_newspost_attachment_path(@newspost_attachment) %> |
+<%= link_to 'Back', newspost_attachments_path %>

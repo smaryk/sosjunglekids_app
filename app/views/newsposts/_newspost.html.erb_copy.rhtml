@@ -1,0 +1,12 @@
+<li>
+  <span class="content"><%= newspost.content.html_safe %></span>
+
+<% newspost.newspost_attachments.each do |p| %>
+  <%= image_tag p.file_url, :size => "150x150" %>
+  <%= link_to "Destroy", p, method: :delete %>
+<% end %>
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(newspost.created_at) %> ago.
+  </span>
+</li>

@@ -1,6 +1,71 @@
-<li>
-  <span class="content"><%= newspost.content %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(newspost.created_at) %> ago.
-  </span>
-</li>
+<% provide(:title, @user.first_name + " " + @user.last_name) %>
+  
+
+<% newspost.newspost_attachments.each do |p| %>
+
+<!--
+        <span class="content">
+        
+        <div class="row">
+            <div >
+                <p>Posted <%= time_ago_in_words(newspost.created_at) %> ago.</p>
+            </div>        	
+            <div class="col-md-5">
+                <a href="blog-post.html">
+                    <%= image_tag p.file_url, :size => "150x150" %>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <h3>
+                    <a href="blog-post.html">Blog Post Title</a>
+                </h3>
+                <p>by <a href="#">Start Bootstrap</a>
+                </p>
+                <p><%= newspost.content.html_safe %></p>
+                <a class="btn btn-primary" href="blog-post.html">Read More <i class="fa fa-angle-right"></i></a>
+                <%= link_to "Destroy", p, method: :delete ,class: "btn btn-small btn-primary" %>
+            </div>
+        </div>
+        
+        </span>
+
+-->       
+
+        <!-- Blog Post Row -->
+        <div class="row">
+            <div class="col-md-2 text-center">
+                </p>
+                <p>Posted <%= time_ago_in_words(newspost.created_at) %> ago.</p>
+            </div>
+            <div class="col-md-5">
+              <center>
+                <% if newspost.newspost_attachments.count > 0 %> 
+                <!-- <%= newspost.newspost_attachments.count %> -->
+                <% newspost.newspost_attachments.each do |p| %>
+  
+                  <%= image_tag p.file_url, :size => "600x300" %>
+                  <p>
+                  <%= link_to "Delete Image", p, method: :delete, class: "btn btn-red" %>
+                  </p>
+                <% end %>
+                <% end %>
+              </center>
+
+            </div>
+            <div class="col-md-5">
+                <h3>
+                    <a href="blog-post.html">Blog Post Title</a>
+                </h3>
+                <p><i>by User: <%= link_to newspost.user_id, current_user %> </i>
+                </p>
+                <p><%= newspost.content.html_safe %></p>
+                
+                <a class="btn btn-primary" href="blog-post.html">Read More <i class="fa fa-angle-right"></i></a>
+                <%= link_to "Destroy", p, method: :delete ,class: "btn btn-red" %>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+
+<% end %>
+

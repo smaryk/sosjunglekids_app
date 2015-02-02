@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dofgv5tbs
+  api_key: '272942155331858'
+  api_secret: yrjSlafjlleFhBxbWTntKZWdNcA
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dofgv5tbs
+  api_key: '272942155331858'
+  api_secret: yrjSlafjlleFhBxbWTntKZWdNcA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dofgv5tbs
+  api_key: '272942155331858'
+  api_secret: yrjSlafjlleFhBxbWTntKZWdNcA
+  enhance_image_tag: true
+  static_image_support: false

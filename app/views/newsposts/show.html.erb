@@ -12,7 +12,7 @@
 
                 <br/>
                 <!-- Date/Time -->
-                <p><i class="fa fa-clock-o">Posted <%= time_ago_in_words(@newspost.created_at) %> ago.</i></p>
+                <p class="even"><i class="fa fa-clock-o">Posted <%= time_ago_in_words(@newspost.created_at) %> ago.</i></p>
 
                 <hr>
                 <br/>
@@ -30,11 +30,10 @@
                 <% end %>
                 <br/>
 
-
-
-                <br/>
                 <!-- Post Content -->
-                <p> <%= @newspost.content.html_safe %> </p>
+                <div class="even">
+                  <p> <%= @newspost.content.html_safe %> </p>
+                </div>
                 <br/>
 
                 <div class="text-center">

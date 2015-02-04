@@ -1,9 +1,9 @@
 <% provide(:title, @user.first_name + " " + @user.last_name) %>
   
-
+<br/><br/>
         <!-- Blog Post Row -->
         <div class="row">
-            <div class="col-md-2 text-center">
+            <div class="col-md-2 even text-center">
                 </p>
                 <p>Posted <%= time_ago_in_words(newspost.created_at) %> ago.</p>
             </div>
@@ -22,7 +22,7 @@
               </center>
 
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 even">
                 <h3><%= newspost.title %></h3>
                 <p><i>by User: <%= link_to newspost.user_id, current_user %> </i>
                 </p>

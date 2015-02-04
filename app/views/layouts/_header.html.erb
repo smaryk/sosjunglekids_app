@@ -14,30 +14,30 @@
 
       <nav>
         <ul class="nav pull-right nav-links">
-          <li><%= link_to "HOME",     home_path   %></li>
-          <li><%= link_to "ABOUT US", about_path  %></li>
-          <li><%= link_to "CONTACT US", contact_path %></li>
-          <li><%= link_to "FAQ",     faq_path   %></li>
+          <li class="navbar-btn nav-links"><%= link_to "HOME",     home_path   %></li>
+          <li class="navbar-btn nav-links"><%= link_to "ABOUT US", about_path  %></li>
+          <li class="navbar-btn nav-links"><%= link_to "CONTACT US", contact_path %></li>
+          <li class="navbar-btn nav-links"><%= link_to "FAQ",     faq_path   %></li>
           <!-- <li><%= link_to "Blog",     blog_path   %></li>  -->
 
           <% if signed_in? %>
-            <li><%= link_to "USERS", users_path %></li>
-            <li id="fat-menu" class="dropdown">
+            <li class="navbar-btn nav-links"><%= link_to "USERS", users_path %></li>
+            <li class="navbar-btn nav-links" id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 ACCOUNT <b class="caret"></b>
               </a>
-              <ul class="dropdown-menu nav-links">
+              <ul class="dropdown-menu nav-links ">
                 <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li><%= link_to 'New Post', new_newspost_path %></li>
                 <li class="divider"></li>
-                <li>
+                <li class="navbar-btn nav-links">
                   <%= link_to "Sign out", signout_path, method: "delete" %>
                 </li>
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "LOGIN", signin_path %></li>
+            <li class="navbar-btn nav-links"><%= link_to "LOGIN", signin_path %></li>
           <% end %>
 
 

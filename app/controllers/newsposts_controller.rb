@@ -26,10 +26,15 @@ class NewspostsController < ApplicationController
   end
 
   def destroy
-    @newspost.destroy
+   
+
+    Newspost.find(params[:id]).destroy
+    flash[:success] = "Newspost deleted."
+    redirect_to users_url  
   end
 
   def show
+    @newspost = Newspost.find(params[:id])
     @newspost_attachments = @newspost.newspost_attachments.all
   end
 

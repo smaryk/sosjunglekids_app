@@ -3,11 +3,39 @@
 
 <%= will_paginate %>
 
+<ul class="users" >
 
-<ul class="users">
+ <li>
+    
+    <div class="col-md-3 text-center"><b>NAME</b></div>
+
+    <div class="col-md-4 text-center"><b>EMAIL</b></div>
+
+    <div class="col-md-2 text-center"><b>NEWSPOSTS</b></div>
+
+    <div class="col-md-1 text-center"><b>DELETE</b></div>
+
+    <div class="col-md-1 text-center"><b>VIEW</b></div>
+
+  </li>  
+
+  <% i=0 %>
   <% @users.each do |user| %>
+
+  <% if i == 0 %>
+   <div class="even">  
+   <% i = 1 %>
+  <% else %>	
+   <div class="odd">  
+   <% i = 0 %>
+  <% end %> 	
     <%= render user %>
+  
+  </div>
+
   <% end %>
+
+
 </ul>
 
 <%= will_paginate %>

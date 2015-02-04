@@ -1,9 +1,27 @@
-<li>
-  <%= link_to user.first_name + " " + user.last_name, user %>
 
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
+  <li>
+    
+    <div class="col-md-3 text-center">
+    <%= link_to user.first_name + " " + user.last_name, user %>
+    </div>
 
-</li>
+    <div class="col-md-4 text-center">
+     	<%= user.email %>
+      
+    </div>
+
+    <div class="col-md-2 text-center">
+      <%= user.newsposts.count %>
+    </div>
+
+    <div class="col-md-1 text-center">
+      <%= link_to "Delete", user, method: :delete,class: "btn btn-red", data: { confirm: "You sure?" } %>
+    </div>
+    
+    <div class="col-md-1 text-center">
+      <%= link_to "View", user,class: "btn btn-primary" %>
+    </div>
+    
+
+  </li>  
+

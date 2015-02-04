@@ -1,36 +1,6 @@
 <% provide(:title, @user.first_name + " " + @user.last_name) %>
   
 
-<% newspost.newspost_attachments.each do |p| %>
-
-<!--
-        <span class="content">
-        
-        <div class="row">
-            <div >
-                <p>Posted <%= time_ago_in_words(newspost.created_at) %> ago.</p>
-            </div>        	
-            <div class="col-md-5">
-                <a href="blog-post.html">
-                    <%= image_tag p.file_url, :size => "150x150" %>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <h3>
-                    <a href="blog-post.html">Blog Post Title</a>
-                </h3>
-                <p>by <a href="#">Start Bootstrap</a>
-                </p>
-                <p><%= newspost.content.html_safe %></p>
-                <a class="btn btn-primary" href="blog-post.html">Read More <i class="fa fa-angle-right"></i></a>
-                <%= link_to "Destroy", p, method: :delete ,class: "btn btn-small btn-primary" %>
-            </div>
-        </div>
-        
-        </span>
-
--->       
-
         <!-- Blog Post Row -->
         <div class="row">
             <div class="col-md-2 text-center">
@@ -44,9 +14,9 @@
                 <% newspost.newspost_attachments.each do |p| %>
   
                   <%= image_tag p.file_url, :size => "600x300" %>
-                  <p>
+                  <!-- <p>
                   <%= link_to "Delete Image", p, method: :delete, class: "btn btn-red" %>
-                  </p>
+                  </p> -->   
                 <% end %>
                 <% end %>
               </center>
@@ -60,12 +30,12 @@
                 </p>
                 <p><%= newspost.content.html_safe %></p>
                 
-                <a class="btn btn-primary" href="blog-post.html">Read More <i class="fa fa-angle-right"></i></a>
-                <%= link_to "Destroy", p, method: :delete ,class: "btn btn-red" %>
+                <%= link_to "More", newspost, method: :show,class: "btn btn-primary" %>
+                <%= link_to "Delete", newspost, method: :delete,class: "btn btn-red", data: { confirm: "You sure?" } %>
             </div>
         </div>
         <!-- /.row -->
-        <hr>
+  
+  
 
-<% end %>
 

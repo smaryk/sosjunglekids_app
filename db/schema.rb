@@ -30,20 +30,6 @@ ActiveRecord::Schema.define(version: 20140815123253) do
 
   add_index "newsposts", ["user_id", "created_at"], name: "index_newsposts_on_user_id_and_created_at"
 
-  create_table "post_attachments", force: true do |t|
-    t.integer  "post_id"
-    t.string   "file"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "posts", force: true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"

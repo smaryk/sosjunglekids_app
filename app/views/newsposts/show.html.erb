@@ -1,20 +1,85 @@
-<% provide(:title, "Newspost Title") %>
+<% provide(:title, "Newspost") %>
+
 <br><br><br><br>
 
-<h3>Newspost Title</h3>
+        <!-- Content Row -->
+        <div class="row">
 
-<div class="row">
-	<%= newspost.content %>
-</div>	
-<div class="row">
-  <% if newspost.newspost_attachments.count > 0 %> 
-    <!-- <%= newspost.newspost_attachments.count %> -->
-    <% newspost.newspost_attachments.each do |p| %>
-  
-    <%= image_tag p.file_url, :size => "600x300" %>
-    <p>
-     <%= link_to "Delete Image", p, method: :delete, class: "btn btn-red" %>
-    </p>   
-  <% end %>
+            <!-- Blog Post Content Column -->
+            <div class="text-center">
+                <h3><%= @newspost.title %></h3>
+                <!-- Blog Post -->
 
-</div>
+                <br/>
+                <!-- Date/Time -->
+                <p><i class="fa fa-clock-o">Posted <%= time_ago_in_words(@newspost.created_at) %> ago.</i></p>
+
+                <hr>
+                <br/>
+                <!-- Preview Image -->
+                
+                <% @newspost.newspost_attachments.each do |p| %>
+                 <% if p.file_url %>
+                   <%= image_tag p.file_url, :size => "600x300" %>
+                   <br/><br/>
+                   <div class="text-center">
+                   	 <%= link_to "Delete Image", p, method: :delete,class: "btn btn-red", data: { confirm: "You sure?" } %>
+                   </div>
+                   <br/>
+                 <% end %> 
+                <% end %>
+                <br/>
+
+
+
+                <br/>
+                <!-- Post Content -->
+                <p> <%= @newspost.content.html_safe %> </p>
+                <br/>
+
+                <div class="text-center">
+                   <%= link_to "Delete Post", @newspost, method: :delete,class: "btn btn-red", data: { confirm: "You sure?" } %>
+                </div>
+
+                <br/>
+
+                <!-- Blog Comments -->
+
+                <!-- Comments Form -->
+                <div class="well">
+                    <h4>Leave a Comment:</h4>
+                    <form role="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+
+                <!-- Posted Comments -->
+
+                <!-- Comment -->
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">Start Bootstrap
+                            <small>August 25, 2014 at 9:30 PM</small>
+                        </h4>
+                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <br/><br/><br/>
+
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+

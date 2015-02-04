@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815123253) do
+ActiveRecord::Schema.define(version: 20150204220116) do
 
   create_table "newspost_attachments", force: true do |t|
     t.integer  "newspost_id"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140815123253) do
     t.string   "images"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "title"
   end
 
   add_index "newsposts", ["user_id", "created_at"], name: "index_newsposts_on_user_id_and_created_at"

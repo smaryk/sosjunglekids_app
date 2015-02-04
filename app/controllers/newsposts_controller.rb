@@ -26,7 +26,6 @@ class NewspostsController < ApplicationController
   end
 
   def destroy
-   
 
     Newspost.find(params[:id]).destroy
     flash[:success] = "Newspost deleted."
@@ -41,7 +40,7 @@ class NewspostsController < ApplicationController
   private
 
    def newspost_params
-    params.require(:newspost).permit(:content, newspost_attachments_attributes: [:id, :newspost_id, :file])  
+    params.require(:newspost).permit(:title, :content, newspost_attachments_attributes: [:id, :newspost_id, :file])  
    end
 
 end

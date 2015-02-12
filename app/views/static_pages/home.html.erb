@@ -1,47 +1,74 @@
 <% provide(:title, 'Home') %>
 
-<br><br><br><br><br><br>
-<h1>SOS Jungle Kids</h1>
-  <div class="row">
-       <!-- Intro Content -->
-        <div class="row">
-         
-        <p>
-          Hidden in the woods and hills in the remote parts of the state of Chhattisgarh in central India are villages in which time seems to have gone completely over. The inhabitants differ in many ways from the rest of Indian society: they speak different languages ​​and have their own traditions, gods and spirits. The tribals call themselves the Adivasis, meaning "first inhabitants" means. Like the American continent has also India 'Indians.' They still live in the same way as their ancestors: agriculture, hunting and gathering jungle fruits as a means to survive.
-        </p>
-        <p>
-          SOS Jungle Kids want to use education as a lever for the development of a forgotten community. Today about one thousand students attend classes in kindergarten, elementary school or high school Dhanwar. There is also a snit- seam and training for village girls. Thanks to the support of foster parents in Belgium get students reading books, notebooks, pen, ink, pencils, a uniform, slippers, underwear, soap, toothpaste, extra clothing, ... and if necessary we will reimburse hospital costs.
-Many students live far from Dhanwar why most students stay in school. They get shelter with their own bed sheets and mosquito nets. Every day, the students 300 kilos of rice and 40 kilos Dahl (sauce for the rice) to binnen.De most students have more comfort at school than at home. No wonder some students who are not orphans, also spend their holidays at school.
-        </p>
-        
-          
-        <ul>
-          <li>Caring for poor and needy children, shelter them, a home and a good education and let them grow according to their own culture, religion and tradition.
 
-          <li>All children of any religion, caste and social background to provide the opportunity to pursue an education and free and happy to grow up. Provide these children an opportunity to learn a trade.
 
-          <li>Teach them ways to be independent, confident and be independent and their qualities such as brotherhood, unity of all religions, good culture to learn more. They will in turn pass these values ​​to future generations. "Father Maes has a tree planted in a place where no one else could or dare. We will ensure that the tree is a tree. Moreover, we will surprise him, we will ensure that a whole bunch arises "-Students Dhanwar.
+<!-- Begin Body -->
 
-        </p>
-                
-            
+  <!-- *****************************************************************************************************************
+   HEADERWRAP
+   ***************************************************************************************************************** -->
+  <div id="headerwrap">
+      <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+          <h3>Welcome to our website!</h3>
+          <h1>SOS Jungle Kids</h1>
+          <h5>Hidden in the woods and hills in the remote parts of the state of Chhattisgarh in central India are villages that time seems to have had no change in the way they live, they still continue to live like their ancestors did! Agriculture, hunting and relying on jungle for food, water and various other resources is still very much a part of their lives. The inhabitants differ in many ways from the rest of Indian society: they speak different languages ​​and have their own traditions and beliefs. The tribals call themselves the Adivasis, thats means "first inhabitants".
+          </h5>
+               
         </div>
-  <hr> 
-  <% if signed_in? %>
+        <br><br>
+        <div class="col-lg-8 col-lg-offset-2 himg">
+          <%=image_tag("sosjunglekids_pic1.jpg",class:"img-responsive", alt: "SOS Jungle Kids, India")%>
+          <br><br>
+        </div>
+      </div><!-- /row -->
+      </div> <!-- /container -->
+  </div><!-- /headerwrap -->
 
-    <div class="center hero-unit">
-      <h2>Thank you for supporting SOS Jungle Kids and making a difference to a child's life!</h2>
-    </div>
+  <!-- *****************************************************************************************************************
+   SERVICE LOGOS
+   ***************************************************************************************************************** -->
+   <div id="service">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <%=image_tag("sosjunglekids_heart.jpg",size:"50x60", alt: "SOS Jungle Kids, India: Volunteer")%>
+          <h4>Become a foster parent</h4>
+          <p><h5>SOS Jungle Kids foster parents are real parents, but on a global scale! Are you the foster parent of one of our jungle kids?</h5>
 
-  <% else %>
+           For only 10 euros per month, you may call yourself a foster parent with pride. For our jungle kids this really makes the difference.</p>
+          <p><br/><%= link_to "More", contact_path,class: "btn btn-theme" %></p>
+        </div>
+        <div class="col-md-4">
+         <%=image_tag("sosjunglekids_book.jpg",size:"50x60", alt: "SOS Jungle Kids, India: Education")%>
+          <h4>Basic education for jungle kids</h4>
+          <p>SOS Jungle Kids want to use education as a trigger for the development of a forgotten community. 
 
-    <div class="center hero-unit">
-      <h2>You have the power to change a child's life. Foster a child's education today!</h2>
-      <%= link_to "Sign up now!", signup_path,  class: "btn btn-primary" %>
-    </div>
+             <ul>
 
-   <% end %>
+                <li> Provide care and shelter for poor and needy children, and a good foundation education to let them grow according to their own culture, religion and tradition.
 
-</div>  
+                <li> All children irrespective of any religion, caste and social background  deserves an equal chance to get basic education and develop to pursue free and happy good life.
+
+                <li> Provide these children with the opportunity to learn a trade and be independent.
+
+                <li> Help them to be confident and independent and use good human qualities to unify people of all religions, and follow good cultural practices so they can pass these values ​​to future generations. 
+              </ul>
+            </p>
+          <p><br/><%= link_to "More", about_path,class: "btn btn-theme" %></p>
+
+
+        </div>
+        <div class="col-md-4">
+          <%=image_tag("sosjunglekids_heart.jpg",size:"50x60", alt: "SOS Jungle Kids, India: Volunteer")%>
+          <h4>Volunteering Activities</h4>
+          <p>We will be elated to hear from you if you want to volunteer to spend time at our school to help children in anyway you can. May you be blessed for offering to help!</p>
+          <p><br/><%= link_to "More", contact_path,class: "btn btn-theme" %></p>
+        </div>            
+      </div>
+    </div><! --/container -->
+   </div><! --/service -->
+
 
 

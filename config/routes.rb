@@ -4,6 +4,7 @@ SampleApp::Application.routes.draw do
   resources :users 
   resources :sessions, only: [:new, :create, :destroy]
   resources :newsposts
+  resources :students
 
   root 'static_pages#home'
   

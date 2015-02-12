@@ -1,49 +1,47 @@
-<% if signed_in? %>
+<% provide(:title, 'Home') %>
+
 <br><br><br><br><br><br>
-<div class="container-fluid">
-  <h1>Welcome to SOSJungleKids, India </h1>
-  <div class="row-fluid">
-    <div class="span3">
-      <h3>Newsposts</h3>
-      
-      <%= link_to 'New Post', new_newspost_path %>
-      <%= render 'shared/feed' %>
-    </div>
-    <div class="content span9">
-      <!--Body content-->
-      This is a test article.
-      This is a test article.
-
-
-
-
-
-
-
-    </div>
-  </div>
-</div>
-
-
-<% else %>
-<br><br><br><br><br><br>
-<div class="container-fluid">
+<h1>SOS Jungle Kids</h1>
+  <div class="row">
        <!-- Intro Content -->
         <div class="row">
-                <h1>SOS Jungle Kids: About Us</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+         
+        <p>
+          Hidden in the woods and hills in the remote parts of the state of Chhattisgarh in central India are villages in which time seems to have gone completely over. The inhabitants differ in many ways from the rest of Indian society: they speak different languages ​​and have their own traditions, gods and spirits. The tribals call themselves the Adivasis, meaning "first inhabitants" means. Like the American continent has also India 'Indians.' They still live in the same way as their ancestors: agriculture, hunting and gathering jungle fruits as a means to survive.
+        </p>
+        <p>
+          SOS Jungle Kids want to use education as a lever for the development of a forgotten community. Today about one thousand students attend classes in kindergarten, elementary school or high school Dhanwar. There is also a snit- seam and training for village girls. Thanks to the support of foster parents in Belgium get students reading books, notebooks, pen, ink, pencils, a uniform, slippers, underwear, soap, toothpaste, extra clothing, ... and if necessary we will reimburse hospital costs.
+Many students live far from Dhanwar why most students stay in school. They get shelter with their own bed sheets and mosquito nets. Every day, the students 300 kilos of rice and 40 kilos Dahl (sauce for the rice) to binnen.De most students have more comfort at school than at home. No wonder some students who are not orphans, also spend their holidays at school.
+        </p>
+        
+          
+        <ul>
+          <li>Caring for poor and needy children, shelter them, a home and a good education and let them grow according to their own culture, religion and tradition.
+
+          <li>All children of any religion, caste and social background to provide the opportunity to pursue an education and free and happy to grow up. Provide these children an opportunity to learn a trade.
+
+          <li>Teach them ways to be independent, confident and be independent and their qualities such as brotherhood, unity of all religions, good culture to learn more. They will in turn pass these values ​​to future generations. "Father Maes has a tree planted in a place where no one else could or dare. We will ensure that the tree is a tree. Moreover, we will surprise him, we will ensure that a whole bunch arises "-Students Dhanwar.
+
+        </p>
+                
             
         </div>
+  <hr> 
+  <% if signed_in? %>
 
-  <div class="center hero-unit">
-    <h2>You have the power to change a child's life. Foster a child's education today!</h2>
-    
-    <%= link_to "Sign up now!", signup_path,
-                                class: "btn btn-small btn-primary" %>
-  </div>
+    <div class="center hero-unit">
+      <h2>Thank you for supporting SOS Jungle Kids and making a difference to a child's life!</h2>
+    </div>
+
+  <% else %>
+
+    <div class="center hero-unit">
+      <h2>You have the power to change a child's life. Foster a child's education today!</h2>
+      <%= link_to "Sign up now!", signup_path,  class: "btn btn-primary" %>
+    </div>
+
+   <% end %>
 
 </div>  
 
-<% end %>
+

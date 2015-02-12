@@ -14,6 +14,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @newsposts = @user.newsposts.paginate(page: params[:page])
+    @students  = @user.students.paginate(page: params[:page])
+
   end
 
   def create

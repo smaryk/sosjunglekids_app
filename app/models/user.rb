@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :newsposts
+  has_many :newsposts, dependent: :destroy
+  has_many :students, dependent: :destroy
+  
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token 
@@ -25,6 +27,11 @@ class User < ActiveRecord::Base
   def feed
     Newspost.where("user_id = ?", id)
   end
+
+  def foster
+    Student.where("user_id = ?", id)
+  end
+
 
   private
 

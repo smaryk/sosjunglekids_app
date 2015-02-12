@@ -10,13 +10,14 @@ class NewspostsController < ApplicationController
   def create
     @newspost = current_user.newsposts.build(newspost_params)
     @newspost_attachment = @newspost.newspost_attachments.build
- 
+    
     if @newspost.save
-
-       params[:newspost_attachments]['file'].each do |a|
-          @newspost_attachment = @newspost.newspost_attachments.create!(:file=> a, :newspost_id => @newspost.id)
+       
+       if(:newspost_attachments['file'])
+         params[:newspost_attachments]['file'].each do |a|
+           @newspost_attachment = @newspost.newspost_attachments.create!(:file=> a, :newspost_id => @newspost.id)
+         end
        end
-
       flash[:success] = "Newspost created!"
       redirect_to root_url
     else

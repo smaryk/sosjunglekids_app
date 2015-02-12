@@ -1,55 +1,31 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-custom navbar-fixed-top" role="navigation">
+      <div class="navbartop-custom">  
+       <br>
+      </div>
 
-    <div class="navbartop-custom">  
-    <br>
-    </div>
-
-
-  <div class="navbar-custom">   
-    <div class="pull-left" >
-       <%=image_tag("sosjunglekids.png",size:"230x200", alt: "SOS Jungle Kids, India")%>
-    </div>  
+      <div class="container">
+        <div class="pull-left">
+          <%=image_tag("sosjunglekids.png",size:"150x80", alt: "SOS Jungle Kids, India")%>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+          <ul class="nav navbar-nav navbartop-custom">
+            <li class="active"><%= link_to "HOME",     home_path   %></li>
+            <li><%= link_to "ABOUT US", about_path  %></li>
+            <li><%= link_to "CONTACT US", contact_path %></li>
+           
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
     
-    <div class="container-fluid">
-
-      <nav>
-        <ul class="nav pull-right nav-links">
-          <li class="navbar-btn nav-links"><%= link_to "HOME",     home_path   %></li>
-          <li class="navbar-btn nav-links"><%= link_to "ABOUT US", about_path  %></li>
-          <li class="navbar-btn nav-links"><%= link_to "CONTACT US", contact_path %></li>
-          <li class="navbar-btn nav-links"><%= link_to "FAQ",     faq_path   %></li>
-          <!-- <li><%= link_to "Blog",     blog_path   %></li>  -->
-
-          <% if signed_in? %>
-            <li class="navbar-btn nav-links"><%= link_to "USERS", users_path %></li>
-            <li class="navbar-btn nav-links" id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                ACCOUNT <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu nav-links ">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                <li><%= link_to 'New Post', new_newspost_path %></li>
-                <li class="divider"></li>
-                <li class="navbar-btn nav-links">
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
-              </ul>
-            </li>
-          <% else %>
-            <li class="navbar-btn nav-links"><%= link_to "LOGIN", signin_path %></li>
-          <% end %>
-
-
-        </ul>
-      </nav>
+     <div class="navbarbottom-custom">  
+      <br>
     </div>
 
-    <div class="navbarbottom-custom">  
-    <br>
     </div>
-
-  </div>
-
-
 </header>
+    <br><br>
+
+
+
